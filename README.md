@@ -32,14 +32,12 @@ const repl = require('repl');<br>
 
 repl.start({<br>
     prompt: "숫자 입력> ",<br>
-    eval: (command, context, filename, callback) => {<br>
+    eval: (command, context, filename,callback)=> {<br>
         let number = Number(command);<br>
-
         if(isNaN(number)){<br>
-            console.log("숫자아님");<br>
-<br>
+            console.log("숫자아님");  <br>
         }else{<br>
-            console.log("숫자맞음");<br>
+            console.log("숫자맞음");  <br>
         }<br>
         callback();<br>
     }<br>
