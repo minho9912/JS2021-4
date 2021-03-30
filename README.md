@@ -42,6 +42,26 @@ repl.start({<br>
         callback();<br>
     }<br>
 })
+#### 배열
+> 여러 개의 자료를 한꺼번에 다룰 수 있는 자료형이다.<br>
+대괄호 내부의 각 자료형은 쉼표(,) 로 구분한다.
+ex: let array = [52,23,'아침밥','점심밥',true,false]<br>
+console.log(array[0]);
+#### while 반복문
+> 가장 기본적인 반복문으로, if조건문과 달리 조건식이 참인 동안에는 계속 실행된다<br>
+조건이 변하지 않으면 무한 반복 하므로 반드시 조건을 false로 만들 수 있는 문장을 포함해야한다.<br>
+ex: while(true){ <br>
+console.log("무한반복);<br>
+}
+#### for 반복문
+> 맨 먼저 초기식을 실행하고 조건식을 확인한다.<br>
+조건식이 false면 반복문을 빠져나가고, true면 문장과 종결식을 차례로 실행해 다시<br>
+조건식이 true인지 확인한다.<br>
+ex: let sum=0; <br>
+for(let i=0; i<=100; i++){<br>
+sum+=i;<br>
+}console.log(sum)<br>
+}
 
 ---
 ## [03월 23일]
