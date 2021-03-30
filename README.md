@@ -1,12 +1,50 @@
 # 최민호 [201840135]
 ## [03월 30일]
 > 오늘 배운 내용 요약<br>
-## if else if 조건문
+#### if else if 조건문
 > if(조건){<br>
 } else if(조건){<br>
 } else if(조건){<br>
 }else{<br>
 }
+#### Switch문
+> switch(조건)&nbsp;&nbsp;{<br>
+    &nbsp;case(조건):<br>
+    &nbsp;&nbsp;출력문<br>
+    &nbsp;&nbsp;break;<br>
+    &nbsp;&nbsp;default:<br>    
+    &nbsp;&nbsp;출력문<br>
+    &nbsp;&nbsp;break;
+}
+#### 삼항연산자
+> <불표현식> ? <참> : <거짓><br>
+ex: number % 2 == 0 ? true : false <br>
+#### 짧은 초기화 조건문
+> 삼항 연산자를 활용한 변수 초기화<br>
+ex: test = test || "초기화 합니다 1"<br>
+console.log(test);
+#### 짧은 초기화 조건문
+> 삼항 연산자를 활용한 변수 초기화<br>
+ex: test = test || "초기화 합니다 1"<br>
+console.log(test);
+#### Node.js의 input<br>
+const repl = require('repl');<br>
+
+repl.start({<br>
+    prompt: "숫자 입력> ",<br>
+    eval: (command, context, filename, callback) => {<br>
+        let number = Number(command);<br>
+
+        if(isNaN(number)){<br>
+            console.log("숫자아님");<br>
+<br>
+        }else{<br>
+            console.log("숫자맞음");<br>
+        }<br>
+        callback();<br>
+    }<br>
+})
+
 ---
 ## [03월 23일]
 > 오늘 배운 내용 요약<br>
