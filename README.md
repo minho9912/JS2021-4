@@ -1,5 +1,110 @@
 # 최민호 [201840135]
 
+## [04월 13일]
+
+> 오늘 배운 내용 요약<br>
+
+#### 콜백 타이머 함수
+
+> setTimeout(function () {<br>
+> console.log("1초가 지낫습니다.");<br>
+> }, 1000);<br>
+> let setset = setInterval(function () {<br>
+> console.log("1초마다 호출");<br>
+> }, 1000);<br>
+> setTimeout(function () {<br>
+> clearInterval(setset);<br>
+> }, 3000);
+
+#### 숫자 변환 함수
+
+``
+
+> let inputA = "52";<br>
+> let inputB = "52.273";<br>
+> let inputC = "1401동";<br> > <br>
+> console.log(parseInt(inputA));<br> <br>
+> console.log(parseInt(inputA));<br>
+> console.log(parseInt(inputB));<br> <br>
+> console.log(parseFloat(inputA));<br>
+> console.log(parseFloat(inputB));<br> <br>
+> console.log(parseInt(inputC));<br>
+> console.log(parseFloat(inputC));
+
+#### 콜백 함수
+
+> function CallTenTimes(callback) {<br>
+> for (let i = 0; i < 10; i++) {<br>
+> callback();<br>
+> }<br>
+> }<br>
+> CallTenTimes(function () {<br>
+> console.log("함수 호출");<br>
+> });
+
+#### 함수 매개변수 초기화
+
+> function print(name, count) {<br>
+> console.log(`${name}(이)/가 ${count}개 있습니다.`);<br>
+> }<br>
+> print("사과", 10);
+
+#### 매개 변수 리턴
+
+> function sum(min, max) {<br>
+> let output = 1;<br>
+> for (let i = min; i <= max; i++) {<br>
+> output \*= i;<br>
+> }<br>
+> return output;<br>
+> }<br>
+> console.log(sum(1, 10));
+
+#### 리턴 없는 함수
+
+> function print(x) {<br>
+> console.log(`"${x} 라고 말했습니다."`);<br>
+> }<br>
+> print("안녕하세요");
+
+#### 매개변수가 여러개인 함수
+
+> function multiply(x, y) {<br>
+> return x + y;<br>
+> }
+
+#### 함수의 기본형태
+
+> function power(x) {<br>
+> return x \* x;<br>
+> }<br>
+> console.log(power(10));
+
+#### 화살표 함수
+
+> let 함수 = () => {<br>
+> console.log("첫번째줄1");<br>
+> console.log("두번째줄2");<br>
+> };
+
+#### 선언적 함수
+
+> function 함수() {<br>
+> console.log("첫번째줄");<br>
+> console.log("두번째줄");<br>
+> }
+
+#### 리터럴
+
+> 변수 안에 들어 있는 상태가 아니라, 문자 그대로 자료를 나타내는 것<br>
+
+#### 익명 함수
+
+> let 함수 = function() {<br>
+> console.log("함수의 첫번째 줄");<br>
+> console.log("함수의 두번째 줄");<br>
+> }
+
 ## [04월 06일]
 
 > 오늘 배운 내용 요약<br>
