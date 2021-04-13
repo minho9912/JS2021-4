@@ -196,10 +196,9 @@
 
 > let output = 0; <br>
 > for(let i=0; i<=100; i++{<br>
-
-    output += i;<br>
-
-}console.log(output)
+>
+> output += i;<br> ><br>
+> }console.log(output)
 
 ## [03월 30일]
 
@@ -217,14 +216,9 @@
 
 > switch(조건)&nbsp;&nbsp;{<br>
 
-    &nbsp;case(조건):<br>
-    &nbsp;&nbsp;출력문<br>
-    &nbsp;&nbsp;break;<br>
-    &nbsp;&nbsp;default:<br>
-    &nbsp;&nbsp;출력문<br>
-    &nbsp;&nbsp;break;
-
-}
+> &nbsp;case(조건):<br> > &nbsp;&nbsp;출력문<br> > &nbsp;&nbsp;break;<br> > &nbsp;&nbsp;default:<br> > &nbsp;&nbsp;출력문<br>
+> &nbsp;&nbsp;break;<br>
+> }
 
 #### 삼항연산자
 
