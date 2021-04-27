@@ -1,5 +1,113 @@
 # 최민호 [201840135]
 
+## [04월 27일]
+
+> 오늘 배운 내용 요약<br>
+
+#### 함수를 외부로 보낸 형태
+
+> function printProduct(products) {<br>
+> console.log(products.name + "의 가격은: " + products.price);<br>
+> }
+
+#### 객체 배열
+
+> let products = [ <br>
+>
+> > { name: "바나나", price: 1200 },<br>
+> > { name: "사과", price: 1300 },<br>
+> > { name: "키위", price: 1400 },<br>
+> > ];
+
+#### 객체의 속성중 함수
+
+> let number = 2223;<br>
+> let object2 = {<br>
+> number: 273,<br>
+> string: "Rinlant",<br>
+> array: [1, 2, 3, 4, 5],<br>
+> ascz12: function () {<br>
+> console.log(this.string + " " + this.number);<br>
+> },<br>
+> };
+
+#### 객체의 속성
+
+> let object = {<br>
+> number: 273,<br>
+> string: "Rinlant",<br>
+> array: [1, 2, 3, 4, 5],<br>
+> };
+
+#### 반복문으로 배열 받아오기
+
+> let array2 = ["사과1", "바나나1", "망고1", "딸기1"];<br>
+> for (let arr123 in array2) {<br>
+> console.log("array2: " + array2[arr123]);<br>
+> }
+
+#### 객체선언
+
+> let product = {<br>
+> 제품명: "7D 건조 망고",<br>
+> 가격: "10000원",<br>
+> 원산지: "대한민국",<br>
+> };<br>
+> console.log(product.가격);
+
+#### 배열
+
+> let array = ["사과", "바나나", "망고", "딸기"];<br>
+> console.log(array[0]);
+
+#### 익명함수와 화살표함수(this)
+
+> (function () {<br>
+> console.log(this);<br>
+> })();<br>
+> (() => {<br>
+> console.log(this);<br>
+> })();
+
+#### 코드 5-20 (함수 덮어쓰기)
+
+> ''객체에 선언되어있는 함수가 출력 우선순위가 더높다''<br>
+> fooo = function () {<br>
+> console.log("첫번째 함수");<br>
+> };<br>
+> function fooo() {<br>
+> console.log("두번째 함수");<br>
+> }
+
+#### 코드 5-19 (함수 덮어쓰기)
+
+> let fooo;<br>
+> fooo = function () {<br>
+> console.log("첫번째함수");<br>
+> };<br>
+> fooo = () => {<br>
+> console.log("두번째함수");<br>
+> };
+
+#### 익명함수와 선언적함수
+
+> let bar;<br>
+> bar = 10;<br>
+> bar = 20;<br>
+> console.log(bar);
+
+#### ClearInterval
+
+> setTimeout(function () {<br>
+> clearInterval(foo);<br>
+> },3000)
+
+#### 무명 함수
+
+> let foo = setInterval(() => {<br>
+> console.log("출력합니다.");<br>
+> }, 1000);
+
 ## [04월 13일]
 
 > 오늘 배운 내용 요약<br>
@@ -216,8 +324,7 @@
 
 > switch(조건)&nbsp;&nbsp;{<br>
 
-> &nbsp;case(조건):<br> > &nbsp;&nbsp;출력문<br> > &nbsp;&nbsp;break;<br> > &nbsp;&nbsp;default:<br> > &nbsp;&nbsp;출력문<br>
-> &nbsp;&nbsp;break;<br>
+> &nbsp;case(조건):<br> > &nbsp;&nbsp;출력문<br> > &nbsp;&nbsp;break;<br> > &nbsp;&nbsp;default:<br> > &nbsp;&nbsp;출력문<br> > &nbsp;&nbsp;break;<br>
 > }
 
 #### 삼항연산자
