@@ -1,5 +1,114 @@
 # 최민호 [201840135]
 
+## [05월 04일]
+
+> 오늘 배운 내용 요약<br>
+
+#### 문자열 분해
+
+> let string = '감자,고구마,바나나,사과';<br>
+> let array = string.split(',');<br>
+> console.log(array);
+
+#### 문자열 포함
+
+> let string3 = "안녕하세요, 좋은 아침입니다.";<br>
+> if (string3.indexOf("아침") >= 0) {<br>
+> console.log("좋은 아침이에요...!");<br>
+> }
+
+#### 잘못된 String 객체 메소드 사용
+
+> let string = "abcedfg";<br>
+> string.toUpperCase();<br>
+> console.log(string);
+
+#### 올바른 String 객체 메소드 사용
+
+> let string = "abcedfg";<br>
+> string = string.toUpperCase();<br>
+> console.log(string);
+
+#### String 객체 생성
+
+> let stringFromLiteral = "안녕하세요";<br>
+> let stringFromLiteral2 = new String("안녕하세요");
+
+#### Number 생성자 함수의 속성
+
+> let numberA = Number.MAX_VALUE;<br>
+> let numberB = Number.MIN_VALUE + 22;<br>
+> console.log(numberA);<br>
+> console.log(numberB);
+
+#### 생성자 함수에 속성과 메소드 추가
+
+> function Constructor() {}<br>
+> Constructor.property = 273;<br>
+> Constructor.method = function () {};<br>
+> console.log(Constructor.property);<br>
+> console.log(Constructor.method);
+
+#### Number 객체의 메소드
+
+> let number = 273.5210332;<br>
+> console.log(number.toFixed(1));<br>
+> console.log(number.toFixed(4));
+
+#### 프로토타입에 메소드 추가
+
+> let primitiveNumber2 = 273;<br>
+> Number.prototype.method = function () {<br>
+> return "Primitive Method";<br>
+> };<br>
+> console.log(primitiveNumber2.method());
+
+#### 기본자료형과 객체자료형의 메소드 추가
+
+> let primitiveNumber = 273;<br>
+> primitiveNumber.method = function () {<br>
+> return "Primitive Method";<br>
+> };<br>
+> console.log(primitiveNumber.method());
+
+#### 기본형과 객체 자료형의 메소드 사용
+
+> let string2 = "과자|1500원";<br>
+> console.log(string2.split("|"));<br>
+> let string2 = new String("과자|1500원");<br>
+> console.log(string2.split("|"));
+
+#### 기본형과 객체 자료형의 차이
+
+> let number = 273;<br>
+> let string = "안녕하세요";<br>
+> let boolean = true;<br>
+> console.log(typeof number);<br>
+> console.log(typeof string);<br>
+> console.log(typeof boolean);
+
+#### null 값과 자료형
+
+> console.log(null);<br>
+> console.log(typeof(null));
+
+#### 프로토타입
+
+> Product.prototype.print = function () {<br>
+> console.log(pro3.name + "의 가격은" + pro3.price + "원입니다.);<br>
+> };<br>
+> let pro3 = new Product("바나나", 1200);<br>
+> pro3.print();
+
+#### 생성자 함수
+
+> function Product(name, price) {<br>
+> this.name = name;<br>
+> this.price = price;<br>
+> }<br>
+> let pro2 = new Product("바나나", 1200);<br>
+> console.log(pro2);
+
 ## [04월 27일]
 
 > 오늘 배운 내용 요약<br>
