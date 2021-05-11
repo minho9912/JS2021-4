@@ -1,5 +1,119 @@
 # 최민호 [201840135]
 
+## [05월 11일]
+
+> 오늘 배운 내용 요약<br>
+
+#### TypeError 예외처리
+
+> function callTherrTimes(callback) {<br>
+> for (let i = 0; i < 3; i++) {<br>
+> callback();<br>
+> }<br>
+> }<br>
+> callTherrTimes(function () {<br>
+> console.log("안녕하세요");<br>
+> });
+
+#### underscore.js
+
+>    <script>
+> let foo = [<br>
+> {<br>
+>  name: "고구마",<br>
+> price: 1000,<br>
+> id: "c",<br>
+> },<br>
+> {<br>
+>  name: "감자",<br>
+>  price: 500,<br>
+>  id: "c",<br>
+> },<br>
+> {<br>
+> name: "바나나",<br>
+> price: 1500,<br>
+> id: "c",<br>
+> },<br>
+> ];<br>
+> const output = _.sortBy(foo, item => item.name);<br>
+> console.log(output);
+> </script>
+
+#### 프로토타입에 메소드 추가
+
+> String.prototype.contain = function (input) {<br>
+> return this.indexOf(input) >= -1;<br>
+> };<br>
+> console.log("안녕하세요".contain("안녕"));<br>
+> console.log("안녕하세요".contain("데굴데굴"));
+
+#### 예제 7-10 (ECMA5)
+
+> let foo2 = [1, 30, 40, 50, 100];<br>
+> //forEach<br>
+> foo2.forEach((item, index) => {<br>
+> console.log(index + "-" + item);<br>
+> });<br> <br>
+> //map()<br>
+> let bar = foo2.map((item, index) => {<br>
+> return item;<br>
+> });<br>
+> console.log(bar);<br> <br>
+> //filter()<br>
+> let foobar = foo2.filter((item, index) => {<br>
+> return item % 2 != 0;<br>
+> });<br>
+> console.log(foobar);
+
+#### Array
+
+> let foo3 = [1, 30, 40, 50, 100];<br>
+> let foo = [<br>
+>
+> > {<br>
+> > name: "고구마",<br>
+> > price: 1000,<br>
+> > },<br>
+> > {<br>
+> > name: "감자",<br>
+> > price: 500,<br>
+> > },<br>
+> > {<br>
+> > name: "바나나",<br>
+> > price: 1500,<br>
+> > },<br>
+> > ];
+
+#### 7-7 Date 객체 예제
+
+> let now = new Date();<br>
+> let before = new Date("December 9, 2020");<br>
+> let interval = now.getTime() - before.getTime();<br>
+> console.log(interval);<br>
+> interval = Math.floor(interval / (1000 _ 60 _ 60 \* 24));<br>
+> console.log(interval);
+
+#### 7-6 Date 객체 예제
+
+> let date = new Date();<br>
+> console.log(date);<br>
+> date.setFullYear(date.getFullYear() + 1);<br>
+> ate.setMonth(date.getMonth() + 11);<br>
+> date.setDate(date.getDate() + 3);<br>
+> console.log(date);
+
+#### 7-5 Date 객체
+
+> let dateA = new Date();<br>
+> console.log(dateA.getHours());<br>
+> console.log(dateA);<br>
+> let dateB = new Date(692281800000);<br>
+> console.log(dateB);<br>
+> let dateC = new Date("December 9, 1991 21:30:00");<br>
+> console.log(dateC);<br>
+> let dateD = new Date(1991, 12 - 1, 9, 21, 30, 0, 0);<br>
+> console.log(dateD);
+
 ## [05월 04일]
 
 > 오늘 배운 내용 요약<br>
