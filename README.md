@@ -1,5 +1,151 @@
 # 최민호 [201840135]
 
+## [05월 18일]
+
+> 오늘 배운 내용 요약<br>
+
+#### 예제 9-14 cheerio
+
+> const request = require("request");<br>
+> const cheerio = require("cheerio");<br> ><br>
+> const url = "http://naver.com";<br> ><br>
+> request(url, (error, response, body) => {<br>
+> const $ = cheerio.load(body);<br>
+> console.log($("strong.new").text());<br>
+> });
+
+#### 예제 9-13 request
+
+> const request = require("request");<br>
+> request("http://naver.com", (error, response, body) => {<br>
+> console.log(body);<br>
+> });
+
+#### 예제 9-12 비동기코드예외처리
+
+> const fs = require("fs"); <br>
+> fs.readFileSync("none.txt", (error, file) => {<br>
+> if (error) {<br>
+> console.log("파일을 읽어 들이는데 문제가 발생했습니다.");<br>
+> console.log(error);<br>
+> } else {<br>
+> console.log(file);<br>
+> console.log(file.toString());<br>
+> }<br>
+> });
+
+#### 예제 9-11 동기코드예외처리
+
+> const fs = require("fs");<br>
+> try {<br>
+> const file = fs.readFileSync("none.txt");<br>
+> console.log(file);<br>
+> console.log(file.toString());<br>
+> } catch (exception) {<br>
+> console.log("파일을 읽어 들이는데 문제가 발생했습니다.");<br>
+> console.log(exception);<br>
+> }
+
+#### 예제 9-10 파일쓰기 (비동기)
+
+> const fs = require("fs");<br>
+> fs.writeFileSync("output.txt", error => {<br>
+> console.log("파일 쓰기 완료");<br>
+> });
+
+#### 예제 9-9 파일쓰기 (동기)
+
+> const fs = require("fs");<br>
+> fs.writeFileSync("output.txt", "안녕");<br>
+> console.log("파일 쓰기 완료");
+
+#### file system모듈
+
+> const fs = require("fs");<br>
+> const async = require("async");<br> ><br>
+> async.parallel(<br> > [<br>
+>
+> > callback => {<br>
+> > fs.readFile("a.txt", callback);<br>
+> > },<br>
+> > callback => {<br>
+> > fs.readFile("b.txt", callback);<br>
+> > },<br>
+> > callback => {<br>
+> > fs.readFile("c.txt", callback);<br>
+> > },<br>
+> > ],<br>
+> > (error, results) => {<br>
+> > console.log(results);<br>
+> > }<br>
+> > );
+
+#### 예제 9-8 (file 비동기식)
+
+> const fs = require("fs");<br> ><br>
+> fs.readFile("test.txt", (error, file) => {<Br>
+> console.log(file);<br>
+> console.log(file.toString());<br>
+> });
+
+#### 예제 9-7 (file 동기식)
+
+> const fs = require("fs");<br>
+> const file = fs.readFileSync("test.txt");<br>
+> console.log(file);<br>
+> console.log(file.toString());
+
+#### 예제 9-6( url )
+
+> const foo = require("url");<br>
+> console.log(foo.parse("http://naver.com"));
+
+#### 예제 9-5( os모듈 )
+
+> const foo = require("os");<br> ><br>
+> console.log(foo.hostname());<br>
+> console.log(foo.cpus());
+
+#### 예제 9-4
+
+> //이벤트 매개변수 exit
+> process.on("exit", () => {<br>
+> console.log("프로세스가 종료되었습니다.");<br>
+> });<br>
+> // uncaughtException 이벤트의 연결<br>
+> process.on("uncaughtException", () => {<br>
+> console.log("예외가 발생했습니다.");<br>
+> });<br>
+> // 예외를 강제로 발생시킴<br>
+> error.error.error();
+
+#### 예제 9-3
+
+> //exit 이벤트의 연결<br>
+> process.on("exit", code => {<br>
+> console.log("프로세스가 종료되었습니다.");<br>
+> console.log("About to exit with code: " + code);<br>
+> });<br>
+> // uncaughtException 이벤트의 연결<br>
+> process.on("uncaughtException", err => {<br>
+> console.log("예외가 발생했습니다.");<br>
+> console.log("About to uncaughtException with code : " + err);<br>
+> });<br>
+> //예외를 강제로 발생시킴<br>
+> error.error.error();
+
+#### 예제 9-2
+
+> console.log("- process.env: ", process.env);<br>
+> console.log("- process.version: ", process.version);<br>
+> console.log("- process.arch: ", process.arch);<br>
+> console.log("- process.platform: ", process.platform);
+
+#### 예제 9-1 (js파일 경로확인)
+
+> console.log(**filename);<br>
+> console.log(**dirname);
+
 ## [05월 11일]
 
 > 오늘 배운 내용 요약<br>
