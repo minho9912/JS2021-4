@@ -1,5 +1,224 @@
 # 최민호 [201840135]
 
+## [05월 25일]
+
+> 오늘 배운 내용 요약<br>
+
+#### 11장 RESTful 웹 서비스 개요
+
+<table border=1>
+RESTful 웹서비스 구조
+<tr>
+<td>GET</td>
+<td>컬렉션을 조회한다</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>컬렉션에 새로운 데이터를 추가한다</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>컬렉션 전체를 한꺼번에 변경한다</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>컬렉션 전체를 삭제한다</td>
+</tr>
+</table>
+
+#### 예제 10-10 morgan 미들웨어
+
+```jsx
+const express = require("express");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
+
+//서버 생성
+const app = express();
+app.use(express.static("public"));
+app.use(morgan("combined"));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//request 이벤트 리스너 설정
+app.get("/", (request, response) => {
+  //html형식의 문자열 생성
+  let output = "";
+  output += '<form method="post">';
+  output += '<input type="text" name="a">';
+  output += '<input type="text" name="b">';
+  output += '<input type="submit">';
+  output += "</form>";
+  //응답
+  response.send(output);
+});
+
+app.post("/", (request, response) => {
+  response.send(request.body);
+});
+
+//서버 실행
+app.listen(52277, () => {
+  console.log("Server running at http://127.0.0.1:52277");
+});
+```
+
+#### 10-9 morgan 미들웨어
+
+```jsx
+const express = require("express");
+const morgan = require("morgan");
+//서버 생성
+const app = express();
+app.use(express.static("public"));
+app.use(morgan("combined"));
+
+//request 이벤트 리스너 설정
+app.get("*", (request, response) => {
+  response.send("명령 프롬포트를 확인해주세요!");
+});
+//서버 실행
+app.listen(52275, () => {
+  console.log("Server running at http://127.0.0.1:52275");
+});
+```
+
+#### 10-8 정적 파일 제공
+
+```jsx
+const express = require("express");
+const app = express();
+app.use(express.static("public"));
+//request 이벤트 리스너 설정
+app.get("*", (request, response) => {
+  response.send(404);
+  response.send("해당경로에는 아무것도없습니다");
+});
+//서버 실행
+app.listen(52274, () => {
+  console.log("Server running at http://127.0.0.1:52274");
+});
+```
+
+#### 예제 10-7 요청 매개 변수 추출
+
+```jsx
+const express = require("express");
+const app = express();
+//request 이벤트 리스너 설정
+app.get("*", (request, response) => {
+  console.log(request.query);
+  response.send(requset.query);
+});
+app.listen(8096, () => {
+  console.log("Server running at http://127.0.0.1:8096");
+});
+```
+
+## 예제 10-6 리다이렉트
+
+```jsx
+const express = require("express");
+const app = express();
+//request 이벤트 리스너 설정
+app.get("*", (request, response) => {
+  response.redirect("http://hanbit.co.kr");
+});
+app.listen(8093, () => {
+  console.log("Server running at http://127.0.0.1:8093");
+});
+```
+
+#### 예제 10-5 상태 코드
+
+```jsx
+const express = require("express");
+const app = express();
+app.get("*", (request, response) => {
+  response.status(404);
+  response.send("해당 경로에는 아무것도 없습니다.");
+});
+app.listen(8091, () => {
+  console.log("Server running at http://127.0.0.1:8091");
+});
+```
+
+#### 예제 10-4 그림과 음악 파일 제공
+
+```jsx
+const express = require("express");
+const fs = require("fs");
+// 서버 생성
+const app = express();
+//request 이벤트 리스너 설정
+app.get("/image", (request, response) => {
+  fs.readFile("image.png", (error, data) => {
+    //이미지 파일 제공
+    response.type("image/png");
+    response.send(data);
+  });
+});
+app.get("/audio", (request, response) => {
+  fs.readFile("audio.mp3", (error, data) => {
+    //이미지 파일 제공
+    response.type("audio/mpeg");
+    response.send(data);
+  });
+});
+
+//서버실행
+app.listen(8092, () => {
+  console.log("Server running at http://127.0.0.1:8092");
+});
+```
+
+#### 예제 10-3 response 객체의 메소드
+
+```jsx
+const express = require("express");
+const app = express();
+app.get("*", (request, response) => {
+  response.status(404);
+  response.set("methodA", "ABCDE");
+  response.set({
+    methodB1: "FGHIJ",
+    methodB2: "KLMNO",
+  });
+  response.send("내마음대로 본문확인");
+});
+app.listen(8091, () => {
+  console.log("Server running at http://127.0.0.1:8091");
+});
+```
+
+#### 예제 10-2 페이지 라우팅
+
+```jsx
+//모듈의 객체 생성
+const express = require("express");
+const app = express();
+app.get("/page/:id", (request, response) => {
+  const id = request.params.id;
+  response.send(`<h1>${id} Page</h1>`);
+});
+app.listen(8090, () => {
+  console.log("Server running at http://127.0.0.1:8090");
+});
+```
+
+#### 예제 10-1 express
+
+```jsx
+const express = require("express");
+const app = express();
+app.use((Request, Response) => {
+  Response.send("<h1>hello world</h1>");
+});
+
+app.listen(52273, () => {
+  console.log("server running at http://127.0.0.1:52273");
+});
+```
+
 ## [05월 18일]
 
 > 오늘 배운 내용 요약<br>
