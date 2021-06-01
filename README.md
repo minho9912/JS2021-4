@@ -1,5 +1,257 @@
 # 최민호 [201840135]
 
+## [06월 01일]
+
+> 오늘 배운 내용 요약<br>
+
+#### 14-14 애니메이션
+
+```jsx
+$(document).ready(function () {
+  $(".box").click(function () {
+    $(this).animate(
+      {
+        left: 1000,
+      },
+      1000
+    );
+  });
+});
+```
+
+#### 14-13 이벤트 제거
+
+```jsx
+$(document).ready(function () {
+  var handler = function (event) {
+    $("<h1></h1>").text($(this).text()).click(handler).appendTo("body");
+    $(this).off();
+  };
+  $("h1").on("click", handler);
+});
+```
+
+#### 14-12 이벤트 간접 연결
+
+```jsx
+$(document).ready(function () {
+  //body 태그에 h1 태그의 click 이벤트 위임
+  $("body").on("click", "h1", function (event) {
+    //h1태그 생성후 바디에추가
+    $("<h1></h1").text($(this).text()).appendTo("body");
+  });
+});
+```
+
+#### 14-11 이벤트 직접 연결
+
+```jsx
+$(document).ready(function () {
+  //h1태그에 click이벤트를 연결
+  $("h1").on("click", function (event) {
+    //이벤트를 발생시킨 문서 객체의 문자를 추출
+    var text = $(this).text();
+    alert(text);
+  });
+});
+```
+
+#### 14-10 제이쿼리를 사용한 문서 객체 생성
+
+```jsx
+$(document).ready(function () {
+  $("<h1></h1>").text("안녕하세요").attr("data-test", "test").css({ backgroundColor: "red", color: "white" }).appendTo("body");
+});
+```
+
+#### 14-9 jQuery를 사용한 속성 조작
+
+```jsx
+    $(document).ready(function () {
+       $("img").each(function (index, element) {
+  $(this).attr("src", "http://placehold.it/" + (index + 1) * 100 + "x100");
+ });});
+    </script>
+   <p class="text-1">test1</p>
+   <p class="text-2">test2</p>
+  <p class="text-3">test3</p>
+   <p class="text-4">test4</p>
+  <img src="" alt="" />
+  <img src="" alt="" />
+  <img src="" alt="" />
+```
+
+#### 14-8 스타일 조작
+
+```jsx
+$(document).ready(function () {
+  for (var i = 0; i < 256; i++) {
+    $("<div></div>")
+      .css({
+        height: 2,
+        background: "rgb(" + i + "," + i + "," + i + ")",
+      })
+      .appendTo("body");
+  }
+});
+```
+
+#### 14-7 text()메소드, html()메소드의 set형태
+
+```jsx
+$(document).ready(function () {
+  $(".text-1").text("<h1>text() 메소드</h1>");
+  $(".text-2").html("<h1>html() 메소드</h1>");
+});
+```
+
+#### 14-6 text,html메소드
+
+```jsx
+$(document).ready(function () {
+  alert($("h1").text());
+  alert($("h1").html());
+});
+```
+
+#### 예제 14-5 문서 객체 반복
+
+```jsx
+$(document).ready(function () {
+  $("h1").each(function (index, element) {
+    // $(this).css("backgroundColor", "blue");
+    $("h1:even").css("backgroundColor", "red");
+  });
+});
+```
+
+```jsx
+$(document).ready(function () {
+$("h1").each(function (index, element) {
+ if (index % 2 == 1) {     $(this).css("backgroundColor", "blue");
+}
+});
+);
+```
+
+#### 예제 14-4 문서 객체 반복
+
+```jsx
+$(document).ready(function () {
+  let $headers = $("h1");
+  for (let i = 0; i < $headers.length; i++) {
+    if (i % 2 == 1) {
+      let domElement = $headers.get(i);
+      $(domElement).css("backgroundColor", "red");
+    }
+  }
+});
+```
+
+#### 14장 $(document).ready()
+
+```jsx
+해당 코드는 문서 객체의 생성 완료 시점을 잡는 이벤트 연결이다.
+```
+
+#### 12장 navigator 객체
+
+```jsx
+appCodeName; // 웹 브라우저의 코드 이름
+appName; // 웹 브라우저의 이름
+appVersion; // 웹 브라우저 버전
+platform; // 시스템 환경
+```
+
+#### 12장 location,history객체
+
+```jsx
+href; // 주소
+host; // 호스트이름,포트번호
+hostname; // 호스트 이름
+port; // 포트번호
+search; // 요청 매개 변수의값
+protocol; // 프로토콜 종류
+```
+
+#### 12장 screen 객체
+
+```jsx
+width; // 화면너비
+height; // 화면높이
+availWidth; // 실제 너비
+availHeight; // 실제 높이
+```
+
+#### 12장 window객체
+
+```jsx
+alert("메시지"); //경고창출력
+prompt("메시지"); // 프롬포트출력
+```
+
+#### 12장 forEach
+
+```jsx
+최신버전;
+const array = [1, 2, 3, 4, 5];
+array.forEach((i, idx) => {
+  console.log(`${i}: ${idx}`);
+});
+익스플로러;
+var array = [1, 2, 3, 4, 5];
+for (var i = 0; i < array.length; i++) {
+  var index = i;
+  var item = array[i];
+  console.log(item + " : " + index);
+}
+```
+
+#### 12장 for of 반복문
+
+```jsx
+최신버전;
+const array = ["가", "나", "다"];
+for (let item of array) {
+  console.log(item);
+}
+익스플로러;
+var array2 = ["가", "나", "다"];
+for (var item in array2) {
+  console.log(array2[item]);
+}
+```
+
+#### 12장 화살표함수
+
+```jsx
+최신버전;
+let fnc = () => {};
+익스플로러;
+let fnc = function () {};
+```
+
+#### 12장 템플릿문자열
+
+```jsx
+최신버전
+let variable =273;
+console.log(`변수의값은 ${variable}입니다.`);
+익스플로러
+console.log("변수의값:"+variable+"이다".);
+```
+
+#### 12장 let,const키워드
+
+```jsx
+최신버전;
+let variable = 273;
+const constant = "hello";
+익스플로러;
+var variableA = 273;
+var constant = "hello";
+```
+
 ## [05월 25일]
 
 > 오늘 배운 내용 요약<br>
